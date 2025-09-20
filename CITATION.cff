@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this package, please cite the accompanying paper."
+title: "User-Aware Timer-Based Power Management — Reproducibility Pack"
+authors:
+  - family-names: Lim
+    given-names: Geunsik
+doi: 10.0000/pm.repro.2025
+date-released: 2025-09-20
