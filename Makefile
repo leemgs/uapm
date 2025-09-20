@@ -36,3 +36,6 @@ tables:
 
 analyze: aggregate tables
 
+
+linux:
+	$(MAKE) -C linux all
