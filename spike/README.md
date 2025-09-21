@@ -7,10 +7,10 @@ The framework is a lightweight solution designed to reduce energy consumption in
 ## Features
 
 - **Lightweight:** Requires <500 lines of code and <1 KB of memory.
-- [cite_start]**Context-Aware:** Dynamically adapts timer thresholds based on the application context (e.g., AR/VR gaming, background sensing, night hours)[cite: 62].
-- [cite_start]**Low Overhead:** Avoids costly CPU polling and complex stacks[cite: 65, 159].
-- [cite_start]**High Portability:** Compatible with standard Linux/Android power management stacks[cite: 51, 75].
-- [cite_start]**Proven Performance:** Achieves similar energy-delay trade-offs as a lightweight ML baseline at orders-of-magnitude lower overhead[cite: 8, 145].
+- **Context-Aware:** Dynamically adapts timer thresholds based on the application context (e.g., AR/VR gaming, background sensing, night hours)[cite: 62].
+- **Low Overhead:** Avoids costly CPU polling and complex stacks[cite: 65, 159].
+- **High Portability:** Compatible with standard Linux/Android power management stacks[cite: 51, 75].
+- **Proven Performance:** Achieves similar energy-delay trade-offs as a lightweight ML baseline at orders-of-magnitude lower overhead[cite: 8, 145].
 
 ## Getting Started
 
@@ -21,7 +21,7 @@ The framework is a lightweight solution designed to reduce energy consumption in
 
 ### Building the Code
 
-To compile the provided `main.c` file, run the following command in your terminal:
+To compile the provided `core.c` file, run the following command in your terminal:
 
 ```bash
-gcc main.c -o adaptive_timer
+gcc core.c -o adaptive_timer
