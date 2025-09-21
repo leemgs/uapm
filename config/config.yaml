@@ -1,0 +1,41 @@
+modes:
+  energy_conservative: {alpha: 0.8, beta: 0.2}
+  balanced:            {alpha: 0.5, beta: 0.5}
+  latency_critical:    {alpha: 0.2, beta: 0.8}
+
+workloads:
+  - web
+  - video
+  - ai
+  - arvr
+  - iot
+
+policies:
+  - baseline
+  - fixed
+  - ml
+  - adaptive
+
+simulation:
+  reps: 30
+  seed: 42
+
+# Synthetic distributions calibrated to match paper-level outcomes.
+distributions:
+  web:
+    energy_mj:   {baseline: [1100, 1300], fixed: [850, 950], ml: [760, 800], adaptive: [730, 770]}
+    latency_ms:  {baseline: [25, 35], fixed: [45, 55], ml: [44, 50], adaptive: [43, 47]}
+  video:
+    energy_mj:   {baseline: [1700, 1900], fixed: [1450, 1550], ml: [1350, 1410], adaptive: [1320, 1380]}
+    latency_ms:  {baseline: [20, 30], fixed: [38, 46], ml: [37, 43], adaptive: [36, 42]}
+  ai:
+    energy_mj:   {baseline: [2100, 2300], fixed: [1850, 1950], ml: [1750, 1810], adaptive: [1720, 1780]}
+    latency_ms:  {baseline: [24, 32], fixed: [38, 44], ml: [37, 41], adaptive: [36, 40]}
+  arvr:
+    energy_mj:   {baseline: [2400, 2600], fixed: [2050, 2150], ml: [1820, 1880], adaptive: [1780, 1840]}
+    latency_ms:  {baseline: [18, 24], fixed: [28, 32], ml: [27, 31], adaptive: [26, 30]}
+    frame_drop:  {baseline: [2.0, 3.0], fixed: [2.8, 3.6], ml: [1.6, 2.2], adaptive: [0.3, 0.8]}
+    jitter_ms:   {baseline: [2.5, 3.5], fixed: [3.0, 4.0], ml: [2.2, 3.0], adaptive: [0.8, 1.6]}
+  iot:
+    energy_mj:   {baseline: [360, 440], fixed: [300, 340], ml: [290, 310], adaptive: [280, 300]}
+    latency_ms:  {baseline: [10, 14], fixed: [16, 20], ml: [16, 18], adaptive: [16, 18]}

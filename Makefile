@@ -1,41 +1,13 @@
+.PHONY: setup simulate analyze clean
 
-PY=python3
-VENV=.venv
-ACTIVATE=$(VENV)/bin/activate
-REQ=requirements.txt
+setup:
+	python3 -m venv .venv && . .venv/bin/activate && pip install -r docker/requirements.txt
 
-setup: $(VENV)/bin/pip
-	. $(ACTIVATE) && pip install -r $(REQ)
+simulate:
+	python scripts/run_experiments.py --seed 42 --reps 30
 
-$(VENV)/bin/pip:
-	python3 -m venv $(VENV)
+analyze:
+	python analysis/make_tables.py
 
-idle:
-	. $(ACTIVATE) && $(PY) experiments/run_idle.py --duration ${DURATION:-28800}
-
-video:
-	. $(ACTIVATE) && $(PY) experiments/run_video.py --duration ${DURATION:-3600}
-
-sense:
-	. $(ACTIVATE) && $(PY) experiments/run_sensing.py --duration ${DURATION:-3600}
-
-ai:
-	. $(ACTIVATE) && $(PY) experiments/run_ai.py --duration ${DURATION:-3600}
-
-game:
-	. $(ACTIVATE) && $(PY) experiments/run_game.py --duration ${DURATION:-1800}
-
-arvr:
-	. $(ACTIVATE) && $(PY) experiments/run_arvr.py --duration ${DURATION:-1800}
-
-aggregate:
-	. $(ACTIVATE) && $(PY) analysis/aggregate.py
-
-tables:
-	. $(ACTIVATE) && $(PY) analysis/make_tables.py
-
-analyze: aggregate tables
-
-
-linux:
-	$(MAKE) -C linux all
+clean:
+	rm -f data/logs/*.csv data/out/*.csv

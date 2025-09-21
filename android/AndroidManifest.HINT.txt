@@ -1,0 +1,5 @@
+// AndroidManifest.xml (hint)
+// <service android:name=".UTimerService" android:foregroundServiceType="dataSync|connectedDevice" />
+// <receiver android:name=".UTimerReceiver" android:exported="false">
+//   <intent-filter><action android:name="com.example.utimer.ACTION_CHECK"/></intent-filter>
+// </receiver>
