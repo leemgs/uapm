@@ -1,5 +1,4 @@
-# utimer-repro
-
+# Utimer (User-Aware Adaptive Timer)
 Reproducible implementation & evaluation kit for **User-Aware Adaptive Timer for Low-Overhead Power Management in Mobile/IoT Systems**.
 
 > Key features
